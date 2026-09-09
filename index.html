@@ -1,0 +1,328 @@
+   <!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pahan Knowledge | දැනුම සොයමු</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#1f2937;
+    line-height:1.7;
+}
+
+header{
+    background:linear-gradient(135deg,#111827,#2563eb);
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:17px;
+}
+
+nav{
+    background:white;
+    padding:16px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+    box-shadow:0 2px 10px #0001;
+}
+
+nav a{
+    color:#2563eb;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:50px 20px 25px;
+}
+
+.hero h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#64748b;
+}
+
+.search{
+    text-align:center;
+    padding:20px;
+}
+
+.search input{
+    width:90%;
+    max-width:600px;
+    padding:15px 20px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    font-size:16px;
+}
+
+.cards{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 18px #0001;
+}
+
+.card .icon{
+    font-size:38px;
+}
+
+.card h3{
+    color:#2563eb;
+    margin:8px 0;
+}
+
+.card p{
+    color:#64748b;
+}
+
+.about{
+    background:white;
+    max-width:900px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 5px 18px #0001;
+}
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+}
+
+.dark{
+    background:#111827;
+    color:#eee;
+}
+
+.dark nav,
+.dark .card,
+.dark .about{
+    background:#1f2937;
+}
+
+.dark .hero p,
+.dark .card p{
+    color:#cbd5e1;
+}
+
+.dark nav a{
+    color:#60a5fa;
+}
+
+.dark footer{
+    background:#000;
+}
+
+.mode{
+    border:0;
+    padding:10px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+@media(max-width:600px){
+    header h1{
+        font-size:30px;
+    }
+
+    .hero h2{
+        font-size:25px;
+    }
+
+    nav a{
+        margin:0 5px;
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🌍 Pahan Knowledge</h1>
+    <p>Learn More • Discover More • Know More</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#knowledge">Knowledge</a>
+    <a href="#about">About</a>
+    <button class="mode" onclick="darkMode()">🌙</button>
+</nav>
+
+<section class="hero" id="home">
+    <h2>දැනුම සොයමු, ලෝකය දකිමු 🌎</h2>
+    <p>
+        විද්‍යාව, තාක්ෂණය, අභ්‍යවකාශය,
+        ඉතිහාසය සහ ලෝකය පිළිබඳ
+        රසවත් හා ප්‍රයෝජනවත් දැනුම සරලව ඉගෙන ගන්න.
+    </p>
+</section>
+
+<div class="search">
+    <input
+        type="text"
+        id="searchBox"
+        placeholder="🔎 Search knowledge..."
+        onkeyup="searchCards()">
+</div>
+
+<section class="cards" id="knowledge">
+
+    <div class="card">
+        <div class="icon">🔬</div>
+        <h3>විද්‍යාව</h3>
+        <p>
+            විද්‍යාත්මක සොයාගැනීම්,
+            ස්වභාවික සංසිද්ධි සහ
+            අපූරු විද්‍යා කරුණු.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🌌</div>
+        <h3>අභ්‍යවකාශය</h3>
+        <p>
+            සූර්යයා, ග්‍රහලෝක, තාරකා,
+            මන්දාකිණි සහ විශ්වයේ
+            අපූරු කරුණු.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">💻</div>
+        <h3>තාක්ෂණය</h3>
+        <p>
+            පරිගණක, Internet,
+            Programming සහ නව
+            තාක්ෂණය ගැන දැනගන්න.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">📚</div>
+        <h3>ඉතිහාසය</h3>
+        <p>
+            ශ්‍රී ලංකාවේ සහ ලෝකයේ
+            ඉතිහාසයේ වැදගත් සිදුවීම්
+            සහ ශිෂ්ටාචාර.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🌍</div>
+        <h3>ලෝක දැනුම</h3>
+        <p>
+            ලෝකයේ රටවල්, ස්ථාන,
+            ස්වභාවික සංසිද්ධි සහ
+            අපූරු තොරතුරු.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">🧠</div>
+        <h3>Interesting Facts</h3>
+        <p>
+            ඔබ නොදන්නා, පුදුම හිතෙන
+            සහ ප්‍රයෝජනවත් කරුණු
+            රැසක්.
+        </p>
+    </div>
+
+</section>
+
+<section class="about" id="about">
+    <h2>About Pahan Knowledge</h2>
+    <br>
+    <p>
+        Pahan Knowledge යනු මිනිසුන්ට
+        ප්‍රයෝජනවත් දැනුම සරලව බෙදාදීම
+        අරමුණු කරගත් website එකකි.
+    </p>
+    <br>
+    <p><b>Created by Pahan Abeyrathna</b></p>
+</section>
+
+<footer>
+    <h3>Pahan Knowledge</h3>
+    <p>Sharing Knowledge • Inspiring Learning</p>
+    <br>
+    <p>© 2026 Pahan Knowledge</p>
+</footer>
+
+<script>
+
+function searchCards(){
+
+    let input=document
+        .getElementById("searchBox")
+        .value
+        .toLowerCase();
+
+    let cards=document.querySelectorAll(".card");
+
+    cards.forEach(function(card){
+
+        let text=card.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            card.style.display="block";
+        }else{
+            card.style.display="none";
+        }
+
+    });
+}
+
+function darkMode(){
+    document.body.classList.toggle("dark");
+}
+
+</script>
+
+</body>
+</html>       
+
