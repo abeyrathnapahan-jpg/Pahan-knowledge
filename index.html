@@ -1,13 +1,16 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="si">
 <head>
-   <meta name="google-site-verification" content="GV-MEbI11rQvZhs2AdY7hD8d5gXBvuxkEjAnyL-TTxY" />
+
+<meta name="google-site-verification" content="GV-MEbI11rQvZhs2AdY7hD8d5gXBvuxkEjAnyL-TTxY" />
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pahan Knowledge | දැනුම සොයමු</title>
 
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -19,6 +22,7 @@ body{
     background:#f4f7fb;
     color:#1f2937;
     line-height:1.7;
+    transition:0.3s;
 }
 
 header{
@@ -98,6 +102,12 @@ nav a{
     padding:25px;
     border-radius:18px;
     box-shadow:0 5px 18px #0001;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card .icon{
@@ -111,6 +121,35 @@ nav a{
 
 .card p{
     color:#64748b;
+}
+
+.topic{
+    display:none;
+    max-width:900px;
+    margin:30px auto;
+    padding:30px;
+    background:white;
+    border-radius:18px;
+    box-shadow:0 5px 18px #0001;
+}
+
+.topic h2{
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.topic p{
+    color:#475569;
+}
+
+.close-btn{
+    margin-top:20px;
+    border:0;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:20px;
+    cursor:pointer;
 }
 
 .about{
@@ -138,12 +177,14 @@ footer{
 
 .dark nav,
 .dark .card,
-.dark .about{
+.dark .about,
+.dark .topic{
     background:#1f2937;
 }
 
 .dark .hero p,
-.dark .card p{
+.dark .card p,
+.dark .topic p{
     color:#cbd5e1;
 }
 
@@ -164,6 +205,7 @@ footer{
 }
 
 @media(max-width:600px){
+
     header h1{
         font-size:30px;
     }
@@ -176,161 +218,375 @@ footer{
         margin:0 5px;
         font-size:14px;
     }
+
+    .topic{
+        margin:20px;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
+
     <h1>🌍 Pahan Knowledge</h1>
-    <p>Learn More • Discover More • Know More</p>
+
+    <p>
+        Learn More • Discover More • Know More
+    </p>
+
 </header>
 
+
 <nav>
+
     <a href="#home">Home</a>
+
     <a href="#knowledge">Knowledge</a>
+
     <a href="#about">About</a>
+
     <button class="mode" onclick="darkMode()">🌙</button>
+
 </nav>
 
+
 <section class="hero" id="home">
-    <h2>දැනුම සොයමු, ලෝකය දකිමු 🌎</h2>
+
+    <h2>
+        දැනුම සොයමු, ලෝකය දකිමු 🌎
+    </h2>
+
     <p>
         විද්‍යාව, තාක්ෂණය, අභ්‍යවකාශය,
         ඉතිහාසය සහ ලෝකය පිළිබඳ
-        රසවත් හා ප්‍රයෝජනවත් දැනුම සරලව ඉගෙන ගන්න.
+        රසවත් හා ප්‍රයෝජනවත් දැනුම
+        සරලව ඉගෙන ගන්න.
     </p>
+
 </section>
 
+
 <div class="search">
+
     <input
         type="text"
         id="searchBox"
         placeholder="🔎 Search knowledge..."
         onkeyup="searchCards()">
+
 </div>
+
 
 <section class="cards" id="knowledge">
 
-    <div class="card">
+
+    <div class="card" onclick="showTopic('science')">
+
         <div class="icon">🔬</div>
+
         <h3>විද්‍යාව</h3>
+
         <p>
             විද්‍යාත්මක සොයාගැනීම්,
             ස්වභාවික සංසිද්ධි සහ
             අපූරු විද්‍යා කරුණු.
         </p>
+
     </div>
 
-    <div class="card">
+
+    <div class="card" onclick="showTopic('space')">
+
         <div class="icon">🌌</div>
+
         <h3>අභ්‍යවකාශය</h3>
+
         <p>
             සූර්යයා, ග්‍රහලෝක, තාරකා,
             මන්දාකිණි සහ විශ්වයේ
             අපූරු කරුණු.
         </p>
+
     </div>
 
-    <div class="card">
+
+    <div class="card" onclick="showTopic('technology')">
+
         <div class="icon">💻</div>
+
         <h3>තාක්ෂණය</h3>
+
         <p>
             පරිගණක, Internet,
             Programming සහ නව
             තාක්ෂණය ගැන දැනගන්න.
         </p>
+
     </div>
 
-    <div class="card">
+
+    <div class="card" onclick="showTopic('history')">
+
         <div class="icon">📚</div>
+
         <h3>ඉතිහාසය</h3>
+
         <p>
             ශ්‍රී ලංකාවේ සහ ලෝකයේ
             ඉතිහාසයේ වැදගත් සිදුවීම්
             සහ ශිෂ්ටාචාර.
         </p>
+
     </div>
 
-    <div class="card">
+
+    <div class="card" onclick="showTopic('world')">
+
         <div class="icon">🌍</div>
+
         <h3>ලෝක දැනුම</h3>
+
         <p>
             ලෝකයේ රටවල්, ස්ථාන,
             ස්වභාවික සංසිද්ධි සහ
             අපූරු තොරතුරු.
         </p>
+
     </div>
 
-    <div class="card">
+
+    <div class="card" onclick="showTopic('facts')">
+
         <div class="icon">🧠</div>
+
         <h3>Interesting Facts</h3>
+
         <p>
             ඔබ නොදන්නා, පුදුම හිතෙන
             සහ ප්‍රයෝජනවත් කරුණු
             රැසක්.
         </p>
+
     </div>
+
 
 </section>
 
+
+<section class="topic" id="topicBox">
+
+    <h2 id="topicTitle"></h2>
+
+    <p id="topicText"></p>
+
+    <button class="close-btn" onclick="closeTopic()">
+        ✖ Close
+    </button>
+
+</section>
+
+
 <section class="about" id="about">
-    <h2>About Pahan Knowledge</h2>
+
+    <h2>
+        About Pahan Knowledge
+    </h2>
+
     <br>
+
     <p>
         Pahan Knowledge යනු මිනිසුන්ට
         ප්‍රයෝජනවත් දැනුම සරලව බෙදාදීම
         අරමුණු කරගත් website එකකි.
     </p>
+
     <br>
-    <p><b>Created by Pahan Abeyrathna</b></p>
+
+    <p>
+        <b>
+            Created by Pahan Abeyrathna
+        </b>
+    </p>
+
 </section>
 
-<footer>
-    <h3>Pahan Knowledge</h3>
-    <p>Sharing Knowledge • Inspiring Learning</p>
+
+<section class="about">
+
+    <h2>🚀 Coming Soon</h2>
+
     <br>
-    <p>© 2026 Pahan Knowledge</p>
+
+    <p>
+        Pahan Knowledge වෙත තවත්
+        රසවත් දැනුම් ලිපි ඉක්මනින්
+        එකතු වේ.
+    </p>
+
+</section>
+
+
+<footer>
+
+    <h3>
+        Pahan Knowledge
+    </h3>
+
+    <p>
+        Sharing Knowledge • Inspiring Learning
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Pahan Knowledge
+    </p>
+
 </footer>
+
 
 <script>
 
+
 function searchCards(){
 
-    let input=document
+    let input =
+        document
         .getElementById("searchBox")
         .value
         .toLowerCase();
 
-    let cards=document.querySelectorAll(".card");
+    let cards =
+        document.querySelectorAll(".card");
+
 
     cards.forEach(function(card){
 
-        let text=card.innerText.toLowerCase();
+        let text =
+            card.innerText.toLowerCase();
+
 
         if(text.includes(input)){
-            card.style.display="block";
+
+            card.style.display = "block";
+
         }else{
-            card.style.display="none";
+
+            card.style.display = "none";
+
         }
 
     });
+
 }
+
+
 
 function darkMode(){
+
     document.body.classList.toggle("dark");
+
 }
 
+
+
+function showTopic(topic){
+
+    let title =
+        document.getElementById("topicTitle");
+
+    let text =
+        document.getElementById("topicText");
+
+    let box =
+        document.getElementById("topicBox");
+
+
+    if(topic === "science"){
+
+        title.innerText = "🔬 විද්‍යාව";
+
+        text.innerText =
+        "විද්‍යාව යනු ස්වභාවික ලෝකය සහ එහි සිදුවන සංසිද්ධි පිළිබඳ සාක්ෂි මත අධ්‍යයනය කිරීමයි. භෞතික විද්‍යාව, රසායන විද්‍යාව සහ ජීව විද්‍යාව වැනි ක්ෂේත්‍ර විද්‍යාවේ කොටස් වේ.";
+
+    }
+
+
+    if(topic === "space"){
+
+        title.innerText = "🌌 අභ්‍යවකාශය";
+
+        text.innerText =
+        "අභ්‍යවකාශය තුළ තාරකා, ග්‍රහලෝක, චන්ද්‍රයන්, මන්දාකිණි සහ තවත් බොහෝ වස්තූන් ඇත. අප ජීවත් වන්නේ සූර්ය පද්ධතියේ පෘථිවිය මතය.";
+
+    }
+
+
+    if(topic === "technology"){
+
+        title.innerText = "💻 තාක්ෂණය";
+
+        text.innerText =
+        "තාක්ෂණය මගින් මිනිසුන්ගේ වැඩ පහසු කිරීමට විවිධ උපකරණ, පද්ධති සහ වැඩසටහන් නිර්මාණය කරයි. පරිගණක, ජංගම දුරකථන සහ Internet තාක්ෂණයේ උදාහරණ වේ.";
+
+    }
+
+
+    if(topic === "history"){
+
+        title.innerText = "📚 ඉතිහාසය";
+
+        text.innerText =
+        "ඉතිහාසය මගින් අතීතයේ සිදුවූ වැදගත් සිදුවීම්, මිනිසුන්, රාජ්‍යයන් සහ ශිෂ්ටාචාර පිළිබඳව අධ්‍යයනය කරයි.";
+
+    }
+
+
+    if(topic === "world"){
+
+        title.innerText = "🌍 ලෝක දැනුම";
+
+        text.innerText =
+        "ලෝක දැනුම තුළ රටවල්, නගර, භූගෝලීය ස්ථාන, සංස්කෘතීන් සහ ලෝකයේ සිදුවන විවිධ ස්වභාවික සංසිද්ධි පිළිබඳ තොරතුරු ඇතුළත් වේ.";
+
+    }
+
+
+    if(topic === "facts"){
+
+        title.innerText = "🧠 Interesting Facts";
+
+        text.innerText =
+        "ලෝකය පිළිබඳ අපූරු හා පුදුම හිතෙන කරුණු රැසක් මෙහිදී ඉගෙන ගත හැක. ඉදිරියේදී තවත් Interesting Facts එකතු කරමු.";
+
+    }
+
+
+    box.style.display = "block";
+
+
+    box.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+function closeTopic(){
+
+    document
+    .getElementById("topicBox")
+    .style.display = "none";
+
+}
+
+
 </script>
-<section class="about">
-    <h2>🚀 Coming Soon</h2>
-    <p>
-        Pahan Knowledge වෙත තවත්
-        රසවත් දැනුම් ලිපි ඉක්මනින් එකතු වේ.
-    </p>
-</section>
+
 </body>
-</html>       
-
-
+</html>
