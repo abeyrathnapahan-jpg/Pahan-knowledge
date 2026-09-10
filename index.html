@@ -595,7 +595,45 @@ function closeTopic(){
 
 }
 
+function showScience(type){
 
+    let title =
+        document.getElementById("topicTitle");
+
+    let text =
+        document.getElementById("topicText");
+
+
+    if(type === "physics"){
+
+        title.innerText = "⚛️ භෞතික විද්‍යාව";
+
+        text.innerText =
+        "භෞතික විද්‍යාව මගින් පදාර්ථය, ශක්තිය, චලනය, බලය සහ ස්වභාවික නීති පිළිබඳව අධ්‍යයනය කරයි.";
+
+    }
+
+
+    if(type === "chemistry"){
+
+        title.innerText = "🧪 රසායන විද්‍යාව";
+
+        text.innerText =
+        "රසායන විද්‍යාව මගින් පදාර්ථයේ සංයුතිය, ගුණාංග සහ රසායනික වෙනස්කම් පිළිබඳව අධ්‍යයනය කරයි.";
+
+    }
+
+
+    if(type === "biology"){
+
+        title.innerText = "🧬 ජීව විද්‍යාව";
+
+        text.innerText =
+        "ජීව විද්‍යාව මගින් ජීවීන්, ඔවුන්ගේ ව්‍යුහය, ක්‍රියාකාරිත්වය සහ පරිසරය සමඟ ඇති සම්බන්ධතා පිළිබඳව අධ්‍යයනය කරයි.";
+
+    }
+
+}
 </script>
 
 </body>
