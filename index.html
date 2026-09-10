@@ -505,16 +505,26 @@ function showTopic(topic){
     let box =
         document.getElementById("topicBox");
 
+if(topic === "science"){
 
-    if(topic === "science"){
+    title.innerText = "🔬 විද්‍යාව";
 
-        title.innerText = "🔬 විද්‍යාව";
+    text.innerHTML = `
+        <button class="close-btn" onclick="showScience('physics')">
+            ⚛️ භෞතික විද්‍යාව
+        </button>
 
-        text.innerText =
-        "විද්‍යාව යනු ස්වභාවික ලෝකය සහ එහි සිදුවන සංසිද්ධි පිළිබඳ සාක්ෂි මත අධ්‍යයනය කිරීමයි. භෞතික විද්‍යාව, රසායන විද්‍යාව සහ ජීව විද්‍යාව වැනි ක්ෂේත්‍ර විද්‍යාවේ කොටස් වේ.";
+        <button class="close-btn" onclick="showScience('chemistry')">
+            🧪 රසායන විද්‍යාව
+        </button>
 
-    }
+        <button class="close-btn" onclick="showScience('biology')">
+            🧬 ජීව විද්‍යාව
+        </button>
+    `;
 
+}
+    
 
     if(topic === "space"){
 
